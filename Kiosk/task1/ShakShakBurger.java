@@ -47,7 +47,8 @@ public class ShakShakBurger {
                     break;
                 case 0:
                     System.out.println("종료되었습니다.");
-                    return; // 사용자가 0을 입력하면 프로그램 종료
+                    isRunning = false; // 반복문 종료 조건 설정
+                    break;
                 default: // 잘못된 입력 처리
                     System.out.println("잘못된 입력입니다.");
                     break;
