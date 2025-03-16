@@ -59,6 +59,7 @@ public class Kiosk {
                 int input = sc.nextInt();
                 if (input == 0) {
                     System.out.println("프로그램이 종료됩니다.");
+                    isRunning = false;
                     break;
                 }
                 if (input >= 1 && input <= menuItems.size()) {
