@@ -47,7 +47,6 @@ public class Kiosk {
      * 숫자가 아닌 값을 입력할 경우 InputMismatchException을 처리.
      */
     public void Start() {
-
         Scanner sc = new Scanner(System.in);
         boolean isRunning = true;
 
@@ -60,9 +59,7 @@ public class Kiosk {
                 if (input == 0) {
                     System.out.println("프로그램이 종료됩니다.");
                     isRunning = false;
-                    break;
-                }
-                if (input >= 1 && input <= menuItems.size()) {
+                } else if (input >= 1 && input <= menuItems.size()) {
                     MenuItem selectedItem = menuItems.get(input - 1);
                     System.out.println(selectedItem.getName() + "의 주문이 완료되었습니다.");
                 } else {
