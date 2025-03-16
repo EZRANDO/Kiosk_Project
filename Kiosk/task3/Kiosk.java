@@ -61,9 +61,13 @@ public class Kiosk {
      * 사용자가 메뉴 번호를 입력하면 해당 메뉴를 주문하고, 잘못된 번호를 입력하면 다시 시도가능
      * 사용자가 0을 입력하면 프로그램은 종료
      */
+
     public void Start() {
+
         Scanner sc = new Scanner(System.in);
-        while (true) {
+        boolean isRunning = true;
+
+        while (isRunning) {
             System.out.println("[ SHAKESHACK MENU ]\n");
             displayMenu(); // 메뉴 출력
             System.out.println("메뉴 번호를 입력하세요. 0번을 누르면 프로그램이 종료됩니다.");
@@ -72,9 +76,8 @@ public class Kiosk {
                 int input = sc.nextInt(); // 사용자 입력 받기
                 if (input == 0) {
                     System.out.println("프로그램이 종료됩니다.");
-                    break; // 종료
-                }
-                if (input >= 1 && input <= menuItems.size()) {
+                    isRunning = false; // 종료 조건: isRunning을 false로 설정
+                } else if (input >= 1 && input <= menuItems.size()) {
                     MenuItem selectedItem = menuItems.get(input - 1); // 메뉴 항목 선택
                     System.out.println(selectedItem.getName() + "의 주문이 완료되었습니다.");
                 } else {
