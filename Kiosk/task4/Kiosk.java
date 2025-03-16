@@ -26,8 +26,9 @@ public class Kiosk {
      */
     public void Start() {
         Scanner sc = new Scanner(System.in); // 스캐너 선언
+        boolean isRunning = true;
 
-        while (true) { // 반복문 시작
+        while (isRunning) { // 반복문 시작
             System.out.println("[ MAIN MENU ]");
             System.out.println("메뉴 번호를 입력하세요. 0번을 누르면 프로그램이 종료됩니다.");
             for (int i = 0; i < menu.size(); i++) {
@@ -39,6 +40,7 @@ public class Kiosk {
 
                 if (input == 0) {
                     System.out.println("프로그램이 종료됩니다.");
+                    isRunning = false;
                     break; // 종료
                 }
 
